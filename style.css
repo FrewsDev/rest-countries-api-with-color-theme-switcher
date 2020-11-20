@@ -1,0 +1,270 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /*--light-background: hsl(0, 0%, 98%);
+    --dark-background: hsl(207, 26%, 17%);
+    --dark-elements-background: hsl(209, 23%, 22%);
+    --light-color-text: hsl(200, 15%, 8%);
+    --text-color: hsl(0, 0%, 100%);*/
+    --background: hsl(207, 26%, 17%);
+    --elements-background: hsl(209, 23%, 22%);
+    --text-color: hsl(0, 0%, 100%);
+}
+
+body {
+    height: 100vh;
+    background: var(--background);
+    font-size: 14px;
+}
+
+body, input, select, button {
+    font-family: 'Nunito Sans';
+}
+
+nav {
+    background: var(--elements-background);
+    display: flex;
+    align-items: center;
+    height: 60px;
+    box-shadow: 0 2px 10px 1px var(--background);
+    margin-bottom: 50px;
+    color: var(--text-color);
+}
+
+nav button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 1440px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.inputs {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    color: var(--text-color);
+}
+
+.inputs input, .inputs select {
+    background: var(--elements-background);
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    box-shadow: 0 0 10px 1px var(--background);
+    position: relative;
+    border-radius: 5px;
+    color: var(--text-color);
+}
+
+.inputs input::placeholder {
+    color: var(--text-color);
+}
+
+.inputs input {
+    width: 300px;
+    padding-left: 30px;
+}
+
+.input-search {
+    position: relative;
+}
+
+ion-icon.search-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-10px);
+    z-index: 99;
+    padding-left: 5px;
+    font-size: 20px;
+}
+
+select option {
+    margin: 40px;
+    color: var(--text-color);
+    font-size: 14px;
+    line-height: 80px;
+}
+
+section {
+    margin: 50px 0px;
+}
+
+section.list .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.card {
+    max-width: 250px;
+    width: 100%;
+    height: 300px;
+    box-shadow: 0 0 6px 1px var(--background);
+    background: var(--elements-background);
+    border-radius: 5px;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.card-img {
+    background-image: attr(data-url-image url);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    width: 250px;
+    height: 150px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.card h2 {
+    padding: 10px 0;
+    font-weight: 800;
+    font-size: 18px;
+}
+
+.card .detail {
+    padding: 10px 20px;
+}
+
+.card .detail p {
+    font-weight: 600;
+}
+
+.card .detail span {
+    font-weight: 300;
+}
+
+section.detail {
+    display: grid;
+    color: var(--text-color);
+}
+
+section.detail button {
+    outline: none;
+    border: none;
+    padding: 5px 20px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--elements-background);
+    box-shadow: 0 0 6px 1px var(--background);
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 50px;
+    color: var(--text-color);
+}
+
+section.detail .content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+section.detail .content p {
+    font-weight: 600;
+}
+
+section.detail .content span {
+    font-weight: 300;
+}
+
+section.detail .image-country {
+    padding: 20px;
+    width: 100%;
+    height: 400px;
+}
+
+section.detail .image-country img {
+    max-height: 100%;
+    width: auto;
+}
+
+section.detail .informations {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 30px 0;
+}
+
+section.detail .informations .info-detail {
+    display: flex;
+    gap: 50px;
+    line-height: 30px;
+}
+
+.borders {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.badge {
+    background: var(--elements-background);
+    box-shadow: 0 0 3px 1px var(--background);
+    padding: 3px 5px;
+    border-radius: 2px;
+}
+
+@media only screen and (max-width: 374px) {
+    nav {
+        font-size: 10px;
+    }
+    .container {
+        max-width: 374px !important;
+    }
+    .inputs .container {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+    }
+    section.list .container {
+        display: flex;
+        justify-content: center;
+    }
+    section.detail .content {
+        grid-template-columns: 1fr;
+    }
+    section.detail button {
+        margin-top: -10px;
+    }
+    section.detail .image-country {
+        padding: 0 20px;
+        width: 100%;
+        margin-bottom: 30px;
+        height: auto;
+    }
+    section.detail .image-country img {
+        height: auto;
+        width: 100%;
+    }
+    section.detail .informations {
+        gap: 20px;
+        padding: 0 20px;
+    }
+    section.detail .informations .info-detail {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
